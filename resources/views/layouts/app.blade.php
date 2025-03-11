@@ -18,12 +18,17 @@
                 extend: {
                     colors: {
                         primary: '#0077B6',
-                        secondary: '#48CAE4',
+                        secondary: '#2A9D8F',
                     }
                 },
             },
         }
     </script>
+    <style>
+        .active{
+            color: #2A9D8F !important;
+        }
+    </style>
 </head>
 
 <body class="font-galvji-regular antialiased">

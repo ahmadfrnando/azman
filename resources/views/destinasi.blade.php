@@ -1,3 +1,4 @@
+@section('nav__item-destinasi', 'active')
 @extends('layouts.app')
 
 @section('content')

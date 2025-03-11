@@ -1,3 +1,5 @@
+@section('nav__item-transportasi', 'active')
+
 @extends('layouts.app')
 
 @section('content')

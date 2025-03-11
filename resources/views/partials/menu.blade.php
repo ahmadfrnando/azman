@@ -18,12 +18,11 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-
-      <a href="/" class="text-sm leading-6 text-white hover:text-secondary">Beranda</a>
-      <a href="/destinasi" class="text-sm leading-6 text-white hover:text-secondary">Destinasi</a>
-      <a href="/penginapan" class="text-sm leading-6 text-white hover:text-secondary">Penginapan</a>
-      <a href="/transportasi" class="text-sm leading-6 text-white hover:text-secondary">Transportasi</a>
-      <a href="/umkm" class="text-sm leading-6 text-white hover:text-secondary">UMKM</a>
+      <a href="/" class="text-sm leading-6 text-white hover:text-secondary @yield('nav__item-beranda')">Beranda</a>
+      <a href="/destinasi" class="text-sm leading-6 text-white hover:text-secondary @yield('nav__item-destinasi')">Destinasi</a>
+      <a href="/penginapan" class="text-sm leading-6 text-white hover:text-secondary @yield('nav__item-penginapan')">Penginapan</a>
+      <a href="/transportasi" class="text-sm leading-6 text-white hover:text-secondary @yield('nav__item-transportasi')">Transportasi</a>
+      <a href="/umkm" class="text-sm leading-6 text-white hover:text-secondary @yield('nav__item-umkm')">UMKM</a>
     </div>
     <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end space-x-4 items-center">
       <a href="#" class="text-sm leading-6 text-white hover:text-secondary">Log In</a>
@@ -50,20 +49,20 @@
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
             <div class="-mx-3">
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Beranda</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Destinasi</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Penginapan</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Transportasi</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">UMKM</a>
-          </div>
-          <!-- <div class="absolute bottom-0 text-center w-full">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Beranda</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Destinasi</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Penginapan</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">Transportasi</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-300 hover:text-secondary">UMKM</a>
+            </div>
+            <!-- <div class="absolute bottom-0 text-center w-full">
             <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-300">Log in</a>
             <a href="#" class="mt-3 -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-secondary hover:bg-secondary/[0.8] p-4">Sign Up</a>
           </div> -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </header>
 @show

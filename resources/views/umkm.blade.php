@@ -1,3 +1,5 @@
+@section('nav__item-umkm', 'active')
+
 @extends('layouts.app')
 
 @section('content')

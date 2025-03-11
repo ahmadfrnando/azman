@@ -28,7 +28,7 @@
             </g>
         </svg>
     </span>
-    <img src="{{ $imgUrl }}" alt="Product screenshot" class="w-full md:w-[554px] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 lg:-ml-0" width="554" height="554">
+    <img src="{{ asset('storage/'. $imgUrl) }}" alt="Product screenshot" class="w-full md:w-[554px] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 lg:-ml-0" width="554" height="554">
     <span class="absolute bottom-0 right-0 transform translate-y-[25%] translate-x-[40%] md:translate-x-[20%]">
         <svg class="w-3/4 md:w-full" xmlns="http://www.w3.org/2000/svg" width="149" height="91" viewBox="0 0 149 91" fill="none">
             <g clip-path="url(#clip0_1716_18319)">

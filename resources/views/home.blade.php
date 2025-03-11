@@ -1,3 +1,5 @@
+@section('nav__item-beranda', 'active')
+
 @extends('layouts.app')
 
 @section('content')

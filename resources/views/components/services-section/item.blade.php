@@ -5,7 +5,6 @@
         {{ $gambar }}
     </div>
     <h3 class="text-xl md:text-2xl text-gray-900 tracking-tight mb-4 font-bold group-hover/item:text-secondary">{{ $title }}</h3>
-    <p class="text-sm md:text-base leading-normal text-gray-500 line-clamp-2">{{ $description }}</p>
     <div class="flex space-x-4">
         <a href="https://wa.me/{{ $phone }}?text=Halo%20saya%20tertarik%20dengan%20{{ $slug }}" class="text-secondary mt-4 hover:text-primary transition-colors duration-150 ease-in-out font-bold text-sm md:text-base px-4 py-2 rounded-md bg-white border-2 border-secondary hover:border-primary" target="_blank">Pesan Sekarang</a>
         <a href="{{  route('destinasi.detail', $slug) }}" class="text-secondary mt-4 hover:text-primary transition-colors duration-150 ease-in-out font-bold text-sm md:text-base px-4 py-2 rounded-md bg-white border-2 border-secondary hover:border-primary">Lihat Detail</a>

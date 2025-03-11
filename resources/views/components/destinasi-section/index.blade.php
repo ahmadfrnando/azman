@@ -22,20 +22,20 @@
             </div>
             <div class="{{ $loop->index == 1 ? 'block md:flex' : 'flex' }} flex-col-reverse md:flex-row items-center mx-auto lg:mx-0 lg:max-w-none">
                 @if ($loop->index == 1)
-                    <x-projects-section.image img-url="{{ $item->gambar }}"></x-projects-section.image>
+                    <x-destinasi-section.image img-url="{{ $item->gambar }}"></x-destinasi-section.image>
                 @endif
                 <div class="mt-4 md:mt-0 lg:mx-auto lg:w-full lg:max-w-7xl {{ $loop->index == 1 ? 'flex justify-end' : '' }}">
                     <div class="lg:pr-4">
                         <div class="lg:max-w-md">
-                            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">{{ $item->nama }}</h1>
-                            <p class="mt-6 mb-10 text-xl leading-8 text-gray-500 text-justify">{{ $item->deskripsi }}</p>
-                            <a href="{{ route('destinasi', ['slug' => $item->slug]) }}" class="rounded-md bg-secondary px-5 py-3 font-semibold text-white shadow-sm hover:bg-secondary/[0.8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Lihat Detail</a>
+                            <a href="{{ route('destinasi.detail', ['slug' => $item->slug]) }}" class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">{{ $item->nama }}</a>
+                            <p class="mt-6 mb-10 text-xl leading-8 text-gray-500 text-justify">{!! $item->deskripsi !!}</p>
+                            <!-- <a href="{{ route('destinasi.detail', ['slug' => $item->slug]) }}" class="rounded-md bg-secondary px-5 py-3 font-semibold text-white shadow-sm hover:bg-secondary/[0.8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Lihat Details</a> -->
                         </div>
                     </div>
                 </div>
 
                 @if ($loop->index != 1)
-                    <x-projects-section.image img-url="{{ $item->gambar }}"></x-projects-section.image>
+                    <x-destinasi-section.image img-url="{{ $item->gambar }}"></x-destinasi-section.image>
                 @endif
             </div>
         </div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <x-projects-section.image img-url="{{ url('images/projects-image.png') }}"></x-projects-section.image>
+                <x-destinasi-section.image img-url="{{ url('images/projects-image.png') }}"></x-destinasi-section.image>
             </div>
         </div>
         <div class="mt-28 md:mt-32 relative isolate overflow-visible lg:overflow-visible">
@@ -83,7 +83,7 @@
                 </svg>
             </div>
             <div class="block md:flex items-center mx-auto lg:mx-0 lg:max-w-none">
-                <x-projects-section.image img-url="{{ url('images/projects-image.png') }}"></x-projects-section.image>
+                <x-destinasi-section.image img-url="{{ url('images/projects-image.png') }}"></x-destinasi-section.image>
 
                 <div class="mt-4 md:mt-0 lg:mx-auto lg:w-full lg:max-w-7xl flex justify-end">
                     <div class="lg:pr-4">
@@ -121,7 +121,7 @@
                     </div>
                 </div>
 
-                <x-projects-section.image img-url="{{ url('images/projects-image.png') }}"></x-projects-section.image>
+                <x-destinasi-section.image img-url="{{ url('images/projects-image.png') }}"></x-destinasi-section.image>
             </div>
         </div>
     @endforelse

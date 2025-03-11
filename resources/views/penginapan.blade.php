@@ -1,3 +1,5 @@
+@section('nav__item-penginapan', 'active')
+
 @extends('layouts.app')
 
 @section('content')

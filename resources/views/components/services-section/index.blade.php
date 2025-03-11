@@ -10,7 +10,7 @@
                     @forelse ($items as $item)
                     <x-services-section.item title="{{ $item->nama }}" description="{{ $item->deskripsi }}" slug="{{ $item->slug }}" phone="{{ $phone }}">
                         <x-slot:gambar>
-                            <img src="{{ asset($item->gambar) }}" alt="{{ $item->slug }}">
+                            <img src="{{ asset('storage/'.$item->gambar) }}" alt="{{ $item->slug }}">
                         </x-slot:gambar>
                     </x-services-section.item>
                     @empty
