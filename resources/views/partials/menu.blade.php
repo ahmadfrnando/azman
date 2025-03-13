@@ -5,7 +5,7 @@
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
       <a href="/" class="-m-1.5 p-1.5">
-        <h1 class="text-lg font-semibold leading-6 text-white">Pesona Tapsel</h1>
+        <h1 class="text-lg font-semibold leading-6 text-white">Pesona Tapteng</h1>
         <!-- <x-logo /> -->
       </a>
     </div>
@@ -35,7 +35,7 @@
     <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-primary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="flex items-center justify-between">
         <a href="#" class="-m-1.5 p-1.5">
-          <h1 class="text-lg font-semibold leading-6 text-white">Pesona Tapsel</h1>
+          <h1 class="text-lg font-semibold leading-6 text-white">Pesona Tapteng</h1>
           <!-- <x-logo /> -->
         </a>
         <button id="close-btn-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-secondary">

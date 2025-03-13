@@ -1,8 +1,8 @@
 <div class="py-16 sm:py-20">
     <div class="mx-auto max-w-5xl px-6 lg:px-8">
         <div class="w-full text-center mb-16 md:mb-24">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Tanya Kami, Jelajahi Tapanuli Selatan dengan Mudah</h2>
-            <p class="mt-6 text-xl leading-8 text-gray-500">Rencanakan liburan impianmu ke Tapanuli Selatan bersama kami! Jika ada pertanyaan, jangan ragu untuk menghubungi tim kami.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Tanya Kami, Jelajahi Tapanuli Tengah dengan Mudah</h2>
+            <p class="mt-6 text-xl leading-8 text-gray-500">Rencanakan liburan impianmu ke Tapanuli Tengah bersama kami! Jika ada pertanyaan, jangan ragu untuk menghubungi tim kami.</p>
         </div>
         <div class="grid grid-cols-1 justify-items-stretch md:grid-cols-2 gap-x-12 gap-y-10 md:gap-y-0">
             <div class="flex flex-col items-center">

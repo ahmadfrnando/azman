@@ -24,7 +24,7 @@ class UmkmResource extends Resource
 {
     protected static ?string $model = Umkm::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
     public static function form(Form $form): Form
     {
@@ -34,6 +34,7 @@ class UmkmResource extends Resource
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                 TextInput::make('slug'),
+                TextInput::make('no_wa')->numeric()->required(),
                 RichEditor::make('deskripsi')->required()->columnSpan(2),
                 FileUpload::make('gambar')->required()
                     ->label('Upload Gambar max 1 MB')

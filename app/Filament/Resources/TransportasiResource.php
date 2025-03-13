@@ -34,6 +34,7 @@ class TransportasiResource extends Resource
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                 TextInput::make('slug'),
+                TextInput::make('no_wa')->numeric()->required(),
                 RichEditor::make('deskripsi')->required()->columnSpan(2),
                 FileUpload::make('gambar')->required()
                     ->label('Upload Gambar max 1 MB')

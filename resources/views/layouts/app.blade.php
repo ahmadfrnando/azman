@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('page_title', 'Pesona Tapsel')</title>
+    <title>@yield('page_title', 'Pesona Tapteng')</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,7 +19,7 @@
                 extend: {
                     colors: {
                         primary: '#0077B6',
-                        secondary: '#2A9D8F',
+                        secondary: '#4caf50',
                     }
                 },
             },

@@ -1,8 +1,8 @@
 <div class="relative isolate px-6 pt-10 md:pt-14 lg:px-8 bg-primary pb-16 md:pb-10 overflow-hidden">
     <div class="mx-auto max-w-6xl py-0 md:py-24 sm:py-12 lg:py-20 block md:flex space-x-8">
         <div class="mb-16 md:mb-0">
-            <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Jelajahi Keindahan Tapanuli Selatan</h1>
-            <p class="mt-6 text-lg leading-8 text-gray-100">Temukan pesona alam, budaya, dan kuliner khas Tapanuli Selatan. Dari perbukitan hijau, air terjun yang menawan, hingga kearifan lokal yang tak terlupakan.</p>
+            <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Jelajahi Keindahan Tapanuli Tengah</h1>
+            <p class="mt-6 text-lg leading-8 text-gray-100">Temukan pesona alam, budaya, dan kuliner khas Tapanuli Tengah. Dari perbukitan hijau, air terjun yang menawan, hingga kearifan lokal yang tak terlupakan.</p>
             <div class="mt-10 flex items-center gap-x-6">
                 <a href="/destinasi" class="rounded-md bg-secondary px-7 py-4 text-base text-white shadow-sm hover:bg-secondary/[0.8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Cari Destinasi</a>
                 <a href="/transportasi" class="rounded-md text-base leading-6 text-white px-7 py-4 bg-gray-700 hover:bg-gray-600">Cari Transportasi <span aria-hidden="true">→</span></a>

@@ -8,16 +8,16 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-14 md:gap-y-16">
                     @forelse ($items as $item)
-                    <x-services-section.item title="{{ $item->nama }}" description="{{ $item->deskripsi }}" slug="{{ $item->slug }}" phone="{{ $phone }}">
+                    <x-services-section.item :pesan="$pesan" :link="$link" title="{{ $item->nama }}" description="{{ $item->deskripsi }}" slug="{{ $item->slug }}" phone="{{ $phone }}">
                         <x-slot:gambar>
-                            <img src="{{ asset('storage/'.$item->gambar) }}" alt="{{ $item->slug }}">
+                            <img src="{{ asset('storage/'.$item->gambar) }}" alt="{{ $item->slug }}" class="w-48 h-48 md:w-64 md:h-64">
                         </x-slot:gambar>
                     </x-services-section.item>
                     @empty
                     <div class="col-span-full flex justify-center items-center flex-col text-center">
                         <img src="{{ asset('images/no-data.svg') }}" alt="No Data Available" class="w-1/2 md:w-1/4 mb-4">
                         <p class="text-lg font-semibold">Data belum ada</p>
-                    </div>>
+                    </div>
                     @endforelse
                 </div>
                 <div class="mt-8">
