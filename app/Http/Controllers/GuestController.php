@@ -35,7 +35,7 @@ class GuestController extends Controller
 
     public function destinasi()
     {
-        $destinasi = Destinasi::limit(3)->get();
+        $destinasi = Destinasi::paginate(6);
 
         return view('destinasi', [
             'destinasi' => $destinasi,
@@ -54,7 +54,7 @@ class GuestController extends Controller
     }
     public function transportasi()
     {
-        $transportasi = Transportasi::limit(3)->get();
+        $transportasi = Transportasi::paginate(6);
 
         return view('transportasi', [
             'transportasi' => $transportasi,
@@ -63,7 +63,7 @@ class GuestController extends Controller
     }
     public function penginapan()
     {
-        $penginapan = Penginapan::limit(3)->get();
+        $penginapan = Penginapan::paginate(6);
 
         return view('penginapan', [
             'penginapan' => $penginapan,
@@ -72,7 +72,7 @@ class GuestController extends Controller
     }
     public function umkm()
     {
-        $umkm = Umkm::limit(3)->get();
+        $umkm = Umkm::paginate(6);
 
         return view('umkm', [
             'umkm' => $umkm,

@@ -6,6 +6,7 @@ use App\Filament\Resources\KontakResource\Pages;
 use App\Filament\Resources\KontakResource\RelationManagers;
 use App\Models\Kontak;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -18,13 +19,14 @@ class KontakResource extends Resource
 {
     protected static ?string $model = Kontak::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-phone';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-               //
+                TextInput::make('email')->email(),
+                TextInput::make('no_hp')->numeric(),
             ]);
     }
 

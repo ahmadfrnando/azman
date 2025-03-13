@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             // ProjectSeeder::class,
             // ProjectGalleryImageSeeder::class,
             // TeamMemberSeeder::class,
-            UserSeeder::class,
+            // UserSeeder::class,
+            DestinasiSeeder::class
         ]);
     }
 }

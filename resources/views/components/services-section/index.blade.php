@@ -14,12 +14,14 @@
                         </x-slot:gambar>
                     </x-services-section.item>
                     @empty
-                    <x-services-section.item title="Messaging Service" description="Donec cursus gravida magna maximus ultricies. In imperdiet felis id neque.">
-                        <x-slot:gambar>
-                            <img src="{{ asset('images/1.jpeg') }}" alt="services-1">
-                        </x-slot:gambar>
-                    </x-services-section.item>
+                    <div class="col-span-full flex justify-center items-center flex-col text-center">
+                        <img src="{{ asset('images/no-data.svg') }}" alt="No Data Available" class="w-1/2 md:w-1/4 mb-4">
+                        <p class="text-lg font-semibold">Data belum ada</p>
+                    </div>>
                     @endforelse
+                </div>
+                <div class="mt-8">
+                    {{ $items->links() }}
                 </div>
             </div>
         </div>

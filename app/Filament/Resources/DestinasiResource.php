@@ -24,9 +24,9 @@ class DestinasiResource extends Resource
 {
     protected static ?string $model = Destinasi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-map';
 
-    protected static ?string $navigationLabel = 'Destinasi';
+    protected static ?string $navigationLabel = 'Destinasi Wisata';
 
     public static function form(Form $form): Form
     {
