@@ -259,4 +259,12 @@ class CustomerController extends Controller
 
         return redirect()->route('user.profile')->with('success', 'Profil berhasil diperbarui!');
     }
+
+    public function pesanan()
+    {
+        $pesananPenginapan = PesananPenginapan::where('id_user', Auth::user()->id)->where('status_pesanan', 1)->get();
+        $pesananTransportasi = PesananTransportasi::where('id_user', Auth::user()->id)->where('status_pesanan', 1)->get();
+
+        return view('user.pesanan', compact('pesananPenginapan', 'pesananTransportasi'));
+    }
 }

@@ -52,3 +52,6 @@ Route::get('/user/riwayat', [CustomerController::class, 'riwayat'])->name('user.
 Route::get('/user/profile', [CustomerController::class, 'profile'])->name('user.profile')->middleware('auth');
 Route::get('/user/profile/edit', [CustomerController::class, 'profileForm'])->name('user.profile.edit')->middleware('auth');
 Route::post('/user/profile/edit', [CustomerController::class, 'profileUpdate'])->name('user.profile.update')->middleware('auth');
+
+//pesanan
+Route::get('/user/pesanan', [CustomerController::class, 'pesanan'])->name('user.pesanan')->middleware('auth');
