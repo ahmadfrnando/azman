@@ -30,9 +30,25 @@ Route::get('/login', [\App\Http\Controllers\CustomerController::class, 'index'])
 Route::post('/login', [\App\Http\Controllers\CustomerController::class, 'login'])->name('login');
 Route::get('/register', [\App\Http\Controllers\CustomerController::class, 'register']);
 Route::post('/register', [\App\Http\Controllers\CustomerController::class, 'registerProccess'])->name('register');
+Route::post('/logout', [CustomerController::class, 'logout']);
+
+//dashboard
 Route::get('/user/dashboard', [CustomerController::class, 'dashboard'])->name('user.dashboard')->middleware('auth');
-Route::get('/user/penginapan', [CustomerController::class, 'penginapan'])->middleware('auth');
+
+//penginapan
+Route::get('/user/penginapan', [CustomerController::class, 'penginapan'])->name('user.penginapan')->middleware('auth');
 Route::get('/user/penginapan/detail/{slug}', [CustomerController::class, 'penginapanDetail'])->name('user.penginapan.detail')->middleware('auth');
 Route::post('/user/penginapan/pesan/{slug}', [CustomerController::class, 'penginapanPesan'])->name('user.penginapan.pesan')->middleware('auth');
-Route::get('/user/transportasi', [CustomerController::class, 'transportasi'])->middleware('auth');
-Route::post('/logout', [CustomerController::class, 'logout']);
+
+//transportasi
+Route::get('/user/transportasi', [CustomerController::class, 'transportasi'])->name('user.transportasi')->middleware('auth');
+Route::get('/user/transportasi/detail/{slug}', [CustomerController::class, 'transportasiDetail'])->name('user.transportasi.detail')->middleware('auth');
+Route::post('/user/transportasi/pesan/{slug}', [CustomerController::class, 'transportasiPesan'])->name('user.transportasi.pesan')->middleware('auth');
+
+// riwayat
+Route::get('/user/riwayat', [CustomerController::class, 'riwayat'])->name('user.riwayat')->middleware('auth');
+
+//profile
+Route::get('/user/profile', [CustomerController::class, 'profile'])->name('user.profile')->middleware('auth');
+Route::get('/user/profile/edit', [CustomerController::class, 'profileForm'])->name('user.profile.edit')->middleware('auth');
+Route::post('/user/profile/edit', [CustomerController::class, 'profileUpdate'])->name('user.profile.update')->middleware('auth');

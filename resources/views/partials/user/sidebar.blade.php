@@ -5,10 +5,7 @@
         <a href="{{ url('/user/dashboard') }}" class="hover:bg-secondary p-2 rounded flex gap-2 font-semibold @yield('nav__item-user-dashboard')"><x-heroicon-o-chart-pie class="w-6 h-6"/> Dashboard</a>
         <a href="{{ url('/user/penginapan') }}" class="hover:bg-secondary p-2 rounded flex gap-2 font-semibold @yield('nav__item-user-penginapan')"><x-heroicon-o-building-office class="w-6 h-6"/> Penginapan</a>
         <a href="{{ url('/user/transportasi') }}" class="hover:bg-secondary p-2 rounded flex gap-2 font-semibold @yield('nav__item-user-transportasi')"><x-heroicon-o-truck class="w-6 h-6"/> Transportasi</a>
-        <form action="{{ url('/user/logout') }}" method="POST" class="w-full">
-            @csrf
-            <button type="submit" class="hover:bg-secondary p-2 rounded flex gap-2 font-semibold w-full text-left"><x-heroicon-o-arrow-left-start-on-rectangle class="w-6 h-6"/> Logout</button>
-        </form>
+        <a href="{{ url('/user/riwayat') }}" class="hover:bg-secondary p-2 rounded flex gap-2 font-semibold @yield('nav__item-user-riwayat')"><x-heroicon-o-clock class="w-6 h-6"/> Riwayat Pesanan</a>
     </nav>
 </div>
 @show

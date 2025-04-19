@@ -36,8 +36,11 @@
     <div class="flex h-screen">
 
         @include('partials.user.sidebar')
-
-        @yield('content')
+        <div class="flex-1 p-6 overflow-y-auto">
+            @include('partials.user.header')
+            @yield('content')
+            @include('partials.user.footer')
+        </div>
     </div>
 
 </body>

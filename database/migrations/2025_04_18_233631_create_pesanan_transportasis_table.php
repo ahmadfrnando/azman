@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pesanan_penginapan', function (Blueprint $table) {
+        Schema::create('pesanan_transportasi', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_penginapan');
             $table->integer('id_user');
-            $table->integer('jumlah_kamar');
+            $table->integer('id_transportasi');
+            $table->date('tanggal_jemput');
+            $table->time('waktu_jemput');
+            $table->text('lokasi_jemput');
+            $table->text('lokasi_tujuan');
+            $table->integer('jumlah_kendaraan');
             $table->integer('jumlah_hari');
-            $table->date('tanggal_checkin');
-            $table->integer('jumlah_orang');
+            $table->integer('jumlah_penumpang');
+            $table->string('no_hp');
             $table->decimal('total_harga', 10, 2)->default(0);
             $table->boolean('status_pesanan')->default(0);
             $table->text('catatan')->nullable();
@@ -31,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pesanan_penginapan');
+        Schema::dropIfExists('pesanan_transportasi');
     }
 };
