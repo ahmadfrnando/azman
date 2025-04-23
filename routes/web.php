@@ -30,7 +30,7 @@ Route::get('/login', [\App\Http\Controllers\CustomerController::class, 'index'])
 Route::post('/login', [\App\Http\Controllers\CustomerController::class, 'login'])->name('login');
 Route::get('/register', [\App\Http\Controllers\CustomerController::class, 'register']);
 Route::post('/register', [\App\Http\Controllers\CustomerController::class, 'registerProccess'])->name('register');
-Route::post('/logout', [CustomerController::class, 'logout']);
+Route::post('/logout', [CustomerController::class, 'logout'])->name('logout');
 
 //dashboard
 Route::get('/user/dashboard', [CustomerController::class, 'dashboard'])->name('user.dashboard')->middleware('auth');
