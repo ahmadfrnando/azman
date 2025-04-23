@@ -18,6 +18,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Set;
+use Filament\Support\RawJs;
 use Illuminate\Support\Str;
 
 class TransportasiResource extends Resource
@@ -35,6 +36,15 @@ class TransportasiResource extends Resource
                     ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                 TextInput::make('slug'),
                 TextInput::make('no_wa')->numeric()->required(),
+                TextInput::make('total_kendaraan')->required()
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn(Set $set, ?string $state) => $set('tersedia', $state)),
+                TextInput::make('tersedia'),
+                TextInput::make('harga')
+                    ->label('Harga Per Hari')
+                    ->mask(RawJs::make('$money($input)'))
+                    ->stripCharacters(',')
+                    ->numeric(),
                 RichEditor::make('deskripsi')->required()->columnSpan(2),
                 FileUpload::make('gambar')->required()
                     ->label('Upload Gambar max 1 MB')
@@ -56,6 +66,7 @@ class TransportasiResource extends Resource
                 TextColumn::make('no')->rowIndex(),
                 TextColumn::make('nama')->searchable(),
                 TextColumn::make('slug')->searchable(),
+                TextColumn::make('tersedia')->searchable(),
                 ImageColumn::make('gambar')->label('Gambar'),
             ])
             ->filters([

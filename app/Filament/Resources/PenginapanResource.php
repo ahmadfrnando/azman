@@ -19,6 +19,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Set;
 use Illuminate\Support\Str;
+use Filament\Forms\Get;
+use Filament\Support\RawJs;
+use Illuminate\Support\Number;
 
 class PenginapanResource extends Resource
 {
@@ -35,6 +38,15 @@ class PenginapanResource extends Resource
                     ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                 TextInput::make('slug'),
                 TextInput::make('no_wa')->numeric()->required(),
+                TextInput::make('total')->required()
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn(Set $set, ?string $state) => $set('tersedia', $state)),
+                TextInput::make('tersedia'),
+                TextInput::make('harga')
+                    ->label('Harga Per Malam')
+                    ->mask(RawJs::make('$money($input)'))
+                    ->stripCharacters(',')
+                    ->numeric(),
                 RichEditor::make('deskripsi')->required()->columnSpan(2),
                 FileUpload::make('gambar')->required()
                     ->label('Upload Gambar max 1 MB')
@@ -56,6 +68,7 @@ class PenginapanResource extends Resource
                 TextColumn::make('no')->rowIndex(),
                 TextColumn::make('nama')->searchable(),
                 TextColumn::make('slug')->searchable(),
+                TextColumn::make('tersedia')->searchable(),
                 ImageColumn::make('gambar')->label('Gambar'),
             ])
             ->filters([
