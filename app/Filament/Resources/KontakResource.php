@@ -21,6 +21,10 @@ class KontakResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-phone';
 
+    protected static ?string $navigationGroup = 'Pengaturan';
+
+    protected static ?int $navigationSort = 8;
+
     public static function form(Form $form): Form
     {
         return $form

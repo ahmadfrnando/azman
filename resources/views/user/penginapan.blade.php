@@ -15,7 +15,7 @@
             <p class="text-gray-600">Sisa Kamar: {{ $item->tersedia }}</p>
             <p class="text-gray-700 mt-2">Harga: {{ 'Rp. ' . number_format($item->harga,0,',','.') }}/malam</p>
             <div class="flex mt-4">
-                <a href="{{ route('user.penginapan.detail', $item->slug) }}" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary font-semibold flex gap-2 uppercase tracking-widest"><x-heroicon-o-check class="w-6 h-6" /> Pesan Sekarang</a>
+                <a href="{{ route('user.penginapan.detail', $item->slug) }}" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary">Pesan Sekarang</a>
             </div>
         </div>
         @endforeach

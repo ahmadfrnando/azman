@@ -25,7 +25,9 @@ class TransportasiResource extends Resource
 {
     protected static ?string $model = Transportasi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-truck';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -40,6 +42,10 @@ class TransportasiResource extends Resource
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn(Set $set, ?string $state) => $set('tersedia', $state)),
                 TextInput::make('tersedia'),
+                TextInput::make('maksimal_penumpang')->numeric()
+                ->minValue(1)
+                ->maxValue(8)
+                ->required(),
                 TextInput::make('harga')
                     ->label('Harga Per Hari')
                     ->mask(RawJs::make('$money($input)'))

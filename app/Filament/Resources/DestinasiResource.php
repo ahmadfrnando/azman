@@ -25,6 +25,8 @@ class DestinasiResource extends Resource
     protected static ?string $model = Destinasi::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-map';
+    
+    protected static ?int $navigationSort = 2;
 
     protected static ?string $navigationLabel = 'Destinasi Wisata';
 
