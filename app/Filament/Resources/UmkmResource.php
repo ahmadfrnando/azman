@@ -18,6 +18,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Set;
+use Filament\Support\RawJs;
 use Illuminate\Support\Str;
 
 class UmkmResource extends Resource
@@ -36,8 +37,16 @@ class UmkmResource extends Resource
                     ->live(onBlur: true)
                     ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                 TextInput::make('slug'),
-                TextInput::make('no_wa')->numeric()->required(),
                 RichEditor::make('deskripsi')->required()->columnSpan(2),
+                TextInput::make('harga_satuan')
+                    ->label('Harga Per Hari')
+                    ->mask(RawJs::make('$money($input)'))
+                    ->stripCharacters(',')
+                    ->numeric(),
+                TextInput::make('total_stok')->required()
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(fn(Set $set, ?string $state) => $set('tersedia', $state)),
+                TextInput::make('tersedia'),
                 FileUpload::make('gambar')->required()
                     ->label('Upload Gambar max 1 MB')
                     ->directory('umkm')
@@ -48,6 +57,7 @@ class UmkmResource extends Resource
                     ->imageResizeTargetHeight('1080')
                     ->maxSize(1024)
                     ->columnSpan(2),
+
             ]);
     }
 

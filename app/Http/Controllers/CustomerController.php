@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PemesananUmkm;
 use App\Models\Penginapan;
 use App\Models\PesananPenginapan;
 use App\Models\PesananTransportasi;
 use App\Models\Transportasi;
+use App\Models\Umkm;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -210,6 +212,57 @@ class CustomerController extends Controller
             ]);
 
             return redirect()->route('user.transportasi.detail', ['slug' => $transportasi->slug])->with('success', 'Pemesanan berhasil!');
+        } catch (\Exception $e) {
+            // Jika ada kesalahan saat menyimpan data
+            return redirect()->back()->with('error', 'An error occurred during booking process.');
+        }
+    }
+
+    public function umkm()
+    {
+        $data = Umkm::all();
+        return view('user.umkm', compact('data'));
+    }
+
+    public function umkmDetail($slug)
+    {
+        $umkm = Umkm::where('slug', $slug)->firstOrFail();
+
+        return view('user.umkm-detail', compact('umkm'));
+    }
+
+    public function umkmPesan(Request $request, $slug)
+    {
+        $umkm = Umkm::where('slug', $slug)->firstOrFail();
+
+
+        $validator = Validator::make($request->all(), [
+            'jumlah' => 'required|integer|min:1|max:' . $umkm->tersedia,
+            'alamat' => 'required|string',
+            'no_hp' => 'required|numeric',
+            'tanggal_pemesanan' => 'required|date',
+            'catatan' => 'nullable|string',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $totalHarga = $umkm->harga_satuan * $request->input('jumlah');
+
+        try {
+            PemesananUmkm::create([
+                'id_user' => Auth::user()->id,
+                'id_umkm' => $umkm->id,
+                'jumlah' => $request->input('jumlah'),
+                'tanggal_pemesanan' => $request->input('tanggal_pemesanan'),
+                'no_hp' => $request->input('no_hp'),
+                'alamat' => $request->input('alamat'),
+                'catatan' => $request->input('catatan'),
+                'total_harga' => $totalHarga
+            ]);
+
+            return redirect()->route('user.umkm.detail', ['slug' => $umkm->slug])->with('success', 'Pemesanan berhasil!');
         } catch (\Exception $e) {
             // Jika ada kesalahan saat menyimpan data
             return redirect()->back()->with('error', 'An error occurred during booking process.');

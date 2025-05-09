@@ -45,6 +45,11 @@ Route::get('/user/transportasi', [CustomerController::class, 'transportasi'])->n
 Route::get('/user/transportasi/detail/{slug}', [CustomerController::class, 'transportasiDetail'])->name('user.transportasi.detail')->middleware('auth');
 Route::post('/user/transportasi/pesan/{slug}', [CustomerController::class, 'transportasiPesan'])->name('user.transportasi.pesan')->middleware('auth');
 
+//umkm
+Route::get('/user/umkm', [CustomerController::class, 'umkm'])->name('user.umkm')->middleware('auth');
+Route::get('/user/umkm/detail/{slug}', [CustomerController::class, 'umkmDetail'])->name('user.umkm.detail')->middleware('auth');
+Route::post('/user/umkm/pesan/{slug}', [CustomerController::class, 'umkmPesan'])->name('user.umkm.pesan')->middleware('auth');
+
 // riwayat
 Route::get('/user/riwayat', [CustomerController::class, 'riwayat'])->name('user.riwayat')->middleware('auth');
 
