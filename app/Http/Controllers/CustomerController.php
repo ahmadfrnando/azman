@@ -269,13 +269,37 @@ class CustomerController extends Controller
         }
     }
 
-    public function riwayat()
-    {   
+    public function riwayat(Request $request)
+    {
         $hari_ini = date('Y-m-d');
-        $riwayatPenginapan = PesananPenginapan::where('id_user', Auth::user()->id)->paginate(10);
-        $riwayatTransportasi = PesananTransportasi::where('id_user', Auth::user()->id)->paginate(10);
-        $riwayatUmkm = PemesananUmkm::where('id_user', Auth::user()->id)->paginate(10);
-        return view('user.riwayat', compact('riwayatPenginapan', 'riwayatTransportasi', 'hari_ini', 'riwayatUmkm'));
+
+        $tab = $request->input('tab', 'penginapan');
+        switch ($tab) {
+            case 'penginapan':
+                $model = PesananPenginapan::where('id_user', Auth::user()->id)->paginate(10);
+                $isCurrent = 'penginapan';
+                return view('user.riwayat-penginapan', compact('model', 'hari_ini', 'isCurrent'));
+                break;
+            case 'transportasi':
+                $model = PesananTransportasi::where('id_user', Auth::user()->id)->paginate(10);
+                $isCurrent = 'transportasi';
+                return view('user.riwayat-transportasi', compact('model', 'hari_ini', 'isCurrent'));
+                break;
+            case 'umkm':
+                $model = PemesananUmkm::where('id_user', Auth::user()->id)->paginate(10);
+                $isCurrent = 'umkm';
+                return view('user.riwayat-umkm', compact('model', 'hari_ini', 'isCurrent'));
+                break;
+            default:
+                $model = PesananPenginapan::where('id_user', Auth::user()->id)->paginate(10);
+                $isCurrent = 'penginapan';
+                return view('user.riwayat-penginapan', compact('model', 'hari_ini', 'isCurrent'));
+                break;
+        }
+        // $riwayatPenginapan = PesananPenginapan::where('id_user', Auth::user()->id)->paginate(10);
+        // $riwayatTransportasi = PesananTransportasi::where('id_user', Auth::user()->id)->paginate(10);
+        // $riwayatUmkm = PemesananUmkm::where('id_user', Auth::user()->id)->paginate(10);
+        return view('user.riwayat', compact('model', 'hari_ini', 'isCurrent'));
     }
 
     public function profile()
@@ -289,7 +313,7 @@ class CustomerController extends Controller
         $user = Auth::user();
         return view('user.profile-edit', compact('user'));
     }
-    
+
     public function profileUpdate(Request $request)
     {
         $validator = Validator::make($request->all(), [
