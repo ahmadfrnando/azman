@@ -42,7 +42,8 @@
             @include('partials.user.footer')
         </div>
     </div>
-
+    @section('scripts')
+    @show
 </body>
 
 </html>

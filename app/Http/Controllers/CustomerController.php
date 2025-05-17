@@ -272,9 +272,10 @@ class CustomerController extends Controller
     public function riwayat()
     {   
         $hari_ini = date('Y-m-d');
-        $riwayatPenginapan = PesananPenginapan::where('id_user', Auth::user()->id)->get();
-        $riwayatTransportasi = PesananTransportasi::where('id_user', Auth::user()->id)->get();
-        return view('user.riwayat', compact('riwayatPenginapan', 'riwayatTransportasi', 'hari_ini'));
+        $riwayatPenginapan = PesananPenginapan::where('id_user', Auth::user()->id)->paginate(10);
+        $riwayatTransportasi = PesananTransportasi::where('id_user', Auth::user()->id)->paginate(10);
+        $riwayatUmkm = PemesananUmkm::where('id_user', Auth::user()->id)->paginate(10);
+        return view('user.riwayat', compact('riwayatPenginapan', 'riwayatTransportasi', 'hari_ini', 'riwayatUmkm'));
     }
 
     public function profile()

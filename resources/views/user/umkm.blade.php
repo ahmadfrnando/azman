@@ -11,9 +11,8 @@
         <div class="bg-white p-4 rounded-lg shadow-lg">
             <img src="{{ asset('storage/'.$item->gambar) }}" alt="{{ $item->slug }}" class="w-full h-40 object-cover rounded-md mb-4">
             <h3 class="text-lg font-semibold text-gray-800">{{ $item->nama }}</h3>
-            <p class="text-gray-600">Maksimal Penumpang: {{ $item->maksimal_penumpang }} orang/mobil</p>
-            <p class="text-gray-600">Sisa Kendaraan: {{ $item->tersedia }}</p>
-            <p class="text-gray-700 mt-2">Harga: {{ 'Rp. ' . number_format($item->harga,0,',','.') }}/hari</p>
+            <p class="text-gray-600">Sisa Stok: {{ $item->tersedia }}</p>
+            <p class="text-gray-700 mt-2">Harga: {{ 'Rp. ' . number_format($item->harga_satuan,0,',','.') }}/pcs</p>
             <div class="flex justify-between mt-4">
                 <a href="{{ route('user.umkm.detail', $item->slug) }}" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary">Pesan Sekarang</a>
             </div>
